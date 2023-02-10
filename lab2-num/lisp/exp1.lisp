@@ -1,3 +1,4 @@
+; to commit code git add *, git commit -m "description", git push
 ; define function exp1
 ; in Java it would be: static float exp1(float a, float b){ return ...; }
 (defun exp1 (a b)

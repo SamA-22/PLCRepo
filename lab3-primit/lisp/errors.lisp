@@ -36,7 +36,7 @@
     (let*
         ((line (read-line)) ;get a line as a string
          (element (read-from-string line))) ;parse the line
-        (if (errorp element) ;is element a valid error?
+        (if (resultp element) ;is element a valid error?
             ; then:
             element ;yes, return it
             ; else:
@@ -44,11 +44,11 @@
                 (write-line "Invalid error, please try again.")
                 (get-error))))) ;start over using recursion
 
-(write-string "Known Errors: ")
-(write-string (format nil "~A~%" errors)) 
+(write-string "Known Results: ")
+(write-string (format nil "~A~%" results)) 
     ;"~%" means end of line
     ;"~A" means format a symbol / Lisp program
 
 (let ((error (get-error)))
     (write-string
-        (format nil "~A results in: ~A~%" error (error-to-result error))))
+        (format nil "~A results in: ~A~%" error (result-to-error error))))

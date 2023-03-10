@@ -49,6 +49,8 @@ class Advert:
         l = self.length_secs
         assert 0 < l and l < 120
 
+# The main difference between these two functions are that python has to check to see if the variables defined are actually the variables they need to be. Haskell does not do this because haskell defines the types before hand.
+
 piece1 = Piece("Moonlight", "C. Arrau", 17*60+26.0)
 piece2 = Piece("Pathetique", "D. Barenboim", 16*60+49.0)
 advert1 = Advert(Product("Bounty", "Mars"), 15.0)
@@ -58,7 +60,7 @@ things = [111, piece1, "hello", advert1, [piece2]]
 
 print("things = %s" % things)
 
-piecesFromThings = "todo" #TASK 5.3.(c) -- replace "todo" by a list comprehension
+piecesFromThings = [item for item in things] #TASK 5.3.(c) -- replace "todo" by a list comprehension
 
 print("piecesFromThings = %s" % piecesFromThings)
 
@@ -74,7 +76,7 @@ playlist1noAds = [ item for item in playlist1 if item.__class__ != Advert ]
 
 print("playlist1noAds = %s" % playlist1noAds)
 
-shortItemLenghts1 = "todo" # TASK 5.3.(b) -- replace "todo" by a list comprehension
+shortItemLenghts1 = [ item for item in playlist1 if item.length_secs < 20] # TASK 5.3.(b) -- replace "todo" by a list comprehension
 
 print("shortItemLenghts1 = %s" % shortItemLenghts1)
 

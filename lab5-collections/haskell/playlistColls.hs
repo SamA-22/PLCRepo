@@ -54,9 +54,9 @@ playlist2 = [piece2, advert1]
 
 playlists = [playlist1, playlist2] -- a list of lists
 
-adsFromPlaylists = "todo" -- TASK 5.4(b)
+adsFromPlaylists = [item | somePlaylists <- playlists, item <- somePlaylists, (isAdvert item)] -- TASK 5.4(b)
 
-shortItemLenghts1 = "todo" -- TASK 5.4(a)
+shortItemLenghts1 = [item | item <- playlist1, not (item_length_secs item > 20)] -- TASK 5.4(a)
 
 main =
     do
@@ -68,4 +68,3 @@ main =
     printf "playlist2 = %s\n" (show playlist2)
     printf "playlists = %s\n" (show playlists)
     printf "adsFromPlaylists = %s\n" (show adsFromPlaylists)
-

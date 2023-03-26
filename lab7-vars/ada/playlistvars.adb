@@ -93,9 +93,9 @@ begin
         item := playlist1(i);
         case item.all.item_variant is
         when PIECE =>
-            length1 := length1 + item.all.piece_length_secs; -- TASK: fix compiler error
+            length1 := length1 + Float(item.all.piece_length_secs); -- TASK: fix compiler error
         when ADVERT =>
-            length1 := length1 + item.all.ad_length_secs; -- TASK: fix compiler error
+            length1 := length1 + Float(item.all.ad_length_secs); -- TASK: fix compiler error
         end case;
     end loop;
 
